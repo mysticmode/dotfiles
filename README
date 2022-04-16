@@ -2,6 +2,11 @@ Alacritty
 -----
 $HOME/.config/alacritty/alacritty.yml
 
+Alacritty Themes
+-----
+npm -i -g alacritty-themes
+alacritty-themes
+
 Vim
 -----
 $HOME/.vimrc
