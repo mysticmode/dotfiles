@@ -66,6 +66,7 @@ set printheader=\
 syntax on
 
 " Preferences for various file formats
+autocmd BufRead,BufNewFile *.asm set filetype=nasm
 autocmd FileType c setlocal noet ts=8 sw=8 tw=80
 autocmd FileType h setlocal noet ts=8 sw=8 tw=80
 autocmd FileType cpp setlocal noet ts=8 sw=8 tw=80
