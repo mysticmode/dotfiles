@@ -23,6 +23,7 @@ set encoding=utf-8
 let g:lightline = {
       \ 'colorscheme': 'PaperColor',
       \ }
+let g:NERDTreeFileLines = 1
 
 colorscheme PaperColor
 
@@ -36,3 +37,7 @@ set number
 set ruler
 set mouse=a
 set noswapfile
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
