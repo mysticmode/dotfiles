@@ -86,3 +86,8 @@ nmap <C-d> <Plug>(coc-definition)
 
 " refactor with renaming Go code
 nmap <leader>r <Plug>(coc-rename)
+
+" fzf
+nnoremap <C-p> :Files<Cr>
+" the_silver_searcher
+nnoremap <C-g> :Ag<Cr>
