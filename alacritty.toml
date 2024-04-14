@@ -1,0 +1,51 @@
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[cursor]
+style = "Block"
+unfocused_hollow = false
+
+[font]
+# Normal font style
+normal = { family = "JetBrains Mono", style = "Regular" }
+
+# Bold font style
+bold = { style = "Bold" }
+
+# Italic font style
+italic = { style = "Italic" }
+
+# Bold Italic font style
+bold_italic = { style = "Bold Italic" }
+
+# Font size in points
+size = 11.25
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+decorations = "full"
+dynamic_padding = false
+dynamic_title = true
+opacity = 1.0
+
+[window.padding]
+x = 2
+y = 2
