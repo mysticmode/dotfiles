@@ -1,3 +1,7 @@
+syntax on
+set laststatus=2
+set t_Co=256
+set encoding=utf-8
 set number
 set ruler
 set mouse=a
