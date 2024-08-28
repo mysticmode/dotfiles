@@ -29,7 +29,7 @@ filetype plugin on
 filetype indent on
 
 syntax enable
-:color shine
+" :color shine
 
 autocmd FileType markdown setlocal tw=80 et ts=2 sw=2
 autocmd FileType text setlocal tw=80
