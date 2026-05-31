@@ -5,6 +5,9 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" onedark colorscheme
+Plugin 'joshdick/onedark.vim'
+
 " Ag
 Plugin 'rking/ag.vim'
 
@@ -116,5 +119,5 @@ let g:enable_italic_font = 1
 let g:hybrid_custom_term_colors = 1
 let base16colorspace=256
 set background=dark
-colorscheme hybrid
+colorscheme onedark
 highlight CursorLine cterm=BOLD ctermbg=235 ctermfg=NONE
