@@ -38,6 +38,8 @@ set ruler
 set mouse=a
 set noswapfile
 
+autocmd FileType c setlocal shiftwidth=2 softtabstop=2 expandtab
+
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
