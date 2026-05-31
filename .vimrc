@@ -1,4 +1,17 @@
-set nocompatible
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Ag
+Plugin 'rking/ag.vim'
+
+" Go development plugin
+Plugin 'fatih/vim-go'
+
+call vundle#end()
 
 set laststatus=2
 set t_Co=256
@@ -31,12 +44,10 @@ filetype plugin on
 filetype indent on
 
 syntax enable
-" :color shine
-:colorscheme jellybeans
 
 autocmd FileType markdown setlocal tw=80 et ts=2 sw=2
 autocmd FileType text setlocal tw=80
-autocmd FileType c,cpp set set tabstop=4 shiftwidth=4 expandtab
+autocmd FileType c,cpp set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType html,xhtml,css,xml,xslt set shiftwidth=2 softtabstop=2
 autocmd FileType vim,lua,nginx set shiftwidth=2 softtabstop=2
@@ -45,6 +56,36 @@ autocmd FileType xhtml,html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 autocmd FileType asm set noexpandtab shiftwidth=8 softtabstop=0 syntax=nasm
+
+" Golang customizations
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+let g:go_bin_path = expand("$HOME/go/bin")
+let g:go_auto_type_info = 1
+
+" Syntax Highlighting for Golang
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" Go keymaps
+" Type Info
+au FileType go nmap <Leader>i <Plug>(go-info)
+" GoDoc
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au Filetype go nmap <Leader>gv <Plug>(go-doc-vertical)
+" Build/Run/Test
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>t <Plug>(go-test)
+" GoDef
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>gs <Plug>(go-def-split)
+au FileType go nmap <Leader>gv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>gt <Plug>(go-def-tab)
 
 " Enhanced keyboard mappings
 "
@@ -60,4 +101,20 @@ map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 map <F5> :make<CR>
 map <F6> :make clean all<CR>
 
+" The Silver Searcher
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
+
 set notermguicolors
+
+" Solarized stuff
+"let g:solarized_termtrans=1
+"let g:solarized_contrast='high'
+let g:enable_bold_font = 1
+let g:enable_italic_font = 1
+let g:hybrid_custom_term_colors = 1
+let base16colorspace=256
+set background=dark
+colorscheme hybrid
+highlight CursorLine cterm=BOLD ctermbg=235 ctermfg=NONE
