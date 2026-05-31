@@ -6,13 +6,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " onedark colorscheme
-Plugin 'joshdick/onedark.vim'
+Plugin 'morhetz/gruvbox'
 
 " Ag
 Plugin 'rking/ag.vim'
 
 " Go development plugin
 Plugin 'fatih/vim-go'
+
+Plugin 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
 
 call vundle#end()
 
@@ -109,6 +111,10 @@ map <F6> :make clean all<CR>
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 
+" Markdown preview
+let g:instant_markdown_autostart = 1
+let g:instant_markdown_slow = 0   " renders on every keystroke
+
 set notermguicolors
 
 " Solarized stuff
@@ -119,5 +125,5 @@ let g:enable_italic_font = 1
 let g:hybrid_custom_term_colors = 1
 let base16colorspace=256
 set background=dark
-colorscheme onedark
+colorscheme gruvbox
 highlight CursorLine cterm=BOLD ctermbg=235 ctermfg=NONE
