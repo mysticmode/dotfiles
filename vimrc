@@ -91,3 +91,9 @@ nmap <leader>r <Plug>(coc-rename)
 nnoremap <C-p> :Files<Cr>
 " the_silver_searcher
 nnoremap <C-g> :Ag<Cr>
+
+" copy-paste
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
