@@ -8,8 +8,8 @@ call vundle#begin()
 " onedark colorscheme
 Plugin 'morhetz/gruvbox'
 
-" Ag
-Plugin 'rking/ag.vim'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 
 " Go development plugin
 Plugin 'fatih/vim-go'
@@ -106,10 +106,20 @@ map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 map <F5> :make<CR>
 map <F6> :make clean all<CR>
 
-" The Silver Searcher
-" bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
+" FZF.vim
+set rtp+=/usr/local/opt/fzf
+" Map Ctrl+p to search files
+nnoremap <C-p> :Files<CR>
+
+" Map Ctrl+b to search open buffers
+nnoremap <C-b> :Buffers<CR>
+
+" Map Leader+f to look for text with Ripgrep
+nnoremap <leader>f :Rg<CR>
+
+" Map Leader+h to search file history
+nnoremap <leader>h :History<CR>
+
 
 " Markdown preview
 let g:instant_markdown_autostart = 1
@@ -117,9 +127,6 @@ let g:instant_markdown_slow = 0   " renders on every keystroke
 
 set notermguicolors
 
-" Solarized stuff
-"let g:solarized_termtrans=1
-"let g:solarized_contrast='high'
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 let g:hybrid_custom_term_colors = 1
